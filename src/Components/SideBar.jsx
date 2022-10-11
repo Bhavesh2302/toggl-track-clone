@@ -47,11 +47,10 @@ const SideBar = () => {
   const navigate = useNavigate();
   const useremail = JSON.parse(localStorage.getItem("usermail"));
 
-  const onLogout=()=>{
- 
-    localStorage.removeItem("usermail")
-    navigate("/")
-  }
+  const onLogout = () => {
+    localStorage.removeItem("usermail");
+    navigate("/");
+  };
 
   return (
     <div className={styles.sideBar_container}>
@@ -154,26 +153,6 @@ const SideBar = () => {
               Integration
             </div>
           </div>
-          {/* <div className={styles.sideBar_track_div_inside_div}> */}
-          {/* <BsClockFill className={styles.icon}/>
-<div className={styles.sideBar_track_div_track_timer_title}>Import/Export</div>
-</div>
-<div className={styles.sideBar_track_div_inside_div}>
-<BsClockFill className={styles.icon}/>
-<div className={styles.sideBar_track_div_track_timer_title}>Mobile App</div>
-</div>
-<div className={styles.sideBar_track_div_inside_div}>
-<BsClockFill className={styles.icon}/>
-<div className={styles.sideBar_track_div_track_timer_title}>Desktop App</div>
-</div>
-<div className={styles.sideBar_track_div_inside_div}>
-<BsClockFill className={styles.icon}/>
-<div className={styles.sideBar_track_div_track_timer_title}>Blog</div>
-</div>
-<div className={styles.sideBar_track_div_inside_div}>
-<BsClockFill className={styles.icon}/>
-<div className={styles.sideBar_track_div_track_timer_title}>Jobs</div>
-</div> */}
         </div>
 
         {/* admin div */}
@@ -219,17 +198,26 @@ const SideBar = () => {
         </div>
       </div>
 
+      {/* logout button*/}
       <div className={styles.sidebar_footer}>
-      <div className={styles.footer_email} style={{ color: "#fff" }}>
+        <div className={styles.footer_email} style={{ color: "#fff" }}>
           {useremail}
         </div>
-            <div className={styles.emoji}>🙂</div>
-            </div>
-            <Button bg={"#dd6fd1"} display="block" m="auto" mt="5px" width="80%"size={"sm"} height="25px" color="white" onClick={onLogout}>logout</Button>
-            
-       
-       
-      
+        <div className={styles.emoji}>🙂</div>
+      </div>
+      <Button
+        bg={"#dd6fd1"}
+        display="block"
+        m="auto"
+        mt="5px"
+        width="80%"
+        size={"sm"}
+        height="25px"
+        color="white"
+        onClick={onLogout}
+      >
+        logout
+      </Button>
     </div>
   );
 };
